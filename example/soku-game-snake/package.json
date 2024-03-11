@@ -8,14 +8,14 @@
   },
   "exports": {
     "./core": {
-      "browser": "./dist/core/index.iife.js",
       "import": "./dist/core/index.esm.js",
-      "require": "./dist/core/index.cjs.js"
+      "require": "./dist/core/index.cjs.js",
+      "browser": "./dist/core/index.iife.js"
     },
     "./screen": {
-      "browser": "./dist/screen/index.iife.js",
       "import": "./dist/screen/index.esm.js",
-      "require": "./dist/screen/index.cjs.js"
+      "require": "./dist/screen/index.cjs.js",
+      "browser": "./dist/screen/index.iife.js"
     }
   },
   "files": [

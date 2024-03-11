@@ -35,13 +35,13 @@ export function buildGame(option: BuildGameOptions) {
     option.plugins.forEach((pluginNameOrOption) => {
       let plugin: GamePlugin;
       if (typeof pluginNameOrOption === 'string') {
-        plugin = NewPlugin(pluginNameOrOption);
+        plugin = NewPlugin(pluginNameOrOption, game);
         Object.assign(game.bundler, {
           ...plugin.bindGame(game) ?? {},
         });
       }
       else {
-        plugin = NewPlugin(pluginNameOrOption.name);
+        plugin = NewPlugin(pluginNameOrOption.name, game, pluginNameOrOption.extra);
         Object.assign(game.bundler, {
           ...plugin.bindGame(game, pluginNameOrOption.extra) ?? {},
         });

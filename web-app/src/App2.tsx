@@ -1,29 +1,27 @@
 import { buildGame, Game, NewGenerator } from '@soku-games/core';
-import * as core from '@soku-games/core';
 
 import { createSignal, For, onMount } from 'solid-js';
-import { downloadGame, loadingMap, setLoadingMap } from './utils';
 
-Object.assign(window, { core });
+import 'soku-game-snake/core';
+import 'soku-game-snake/screen';
 
-export function App() {
+export function App2() {
   const [gameName, setGameName] = createSignal('snake');
 
   const games = ['snake', 'reversi', 'backgammon'];
-  const versions = ['1.7.3', '1.6.0', '0.5.1'];
 
   onMount(() => {
-    games.forEach((gameName, i) => {
-      const ok = () => {
-        const cnt = loadingMap()[gameName] ?? 0;
-        setLoadingMap({
-          ...loadingMap(),
-          [gameName]: cnt + 1,
-        });
-      };
-      downloadGame(`soku-game-${gameName}`, versions[i], 'core', ok);
-      downloadGame(`soku-game-${gameName}`, versions[i], 'screen', ok);
-    });
+    // games.forEach((gameName, i) => {
+    //   const ok = () => {
+    //     const cnt = loadingMap()[gameName] ?? 0;
+    //     setLoadingMap({
+    //       ...loadingMap(),
+    //       [gameName]: cnt + 1,
+    //     });
+    //   };
+    //   downloadGame(`soku-game-${gameName}`, versions[i], 'core', ok);
+    //   downloadGame(`soku-game-${gameName}`, versions[i], 'screen', ok);
+    // });
   });
 
   return (
@@ -31,7 +29,7 @@ export function App() {
       <div>
         <For each={games}>
           {(gameName) => 
-            <button onClick={() => setGameName(gameName)} disabled={loadingMap()[gameName] !== 2}>
+            <button onClick={() => setGameName(gameName)}>
               {gameName}
             </button>
           }

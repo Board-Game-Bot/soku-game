@@ -4,7 +4,7 @@ import dts from 'rollup-plugin-dts';
 
 export default defineConfig([
   {
-    input: './src/core.ts',
+    input: './src/index.ts',
     output: [
       { file: './dist/index.cjs', format: 'cjs' },
       { file: './dist/index.mjs', format: 'esm' },
@@ -12,7 +12,7 @@ export default defineConfig([
     plugins: [ts()],
   },
   {
-    input: './src/core.ts',
+    input: './src/index.ts',
     output: [{ file: './dist/index.d.ts', format: 'es' }],
     plugins: [dts()],
   },

@@ -5,3 +5,4 @@ export * from './generator.decorator';
 export * from './game-plugin';
 export * from './game-plugin.decorator';
 export * from './types';
+export * from './decorators';

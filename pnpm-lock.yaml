@@ -173,6 +173,9 @@ importers:
       soku-game-recorder:
         specifier: workspace:^
         version: link:../example/soku-game-recorder
+      soku-game-snake:
+        specifier: workspace:^
+        version: link:../example/soku-game-snake
       solid-js:
         specifier: ^1.7.8
         version: 1.7.8
