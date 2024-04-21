@@ -26,6 +26,9 @@
     "games"
   ],
   "devDependencies": {
-    "@types/lodash-es": "^4.17.12"
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@types/lodash-es": "^4.17.12",
+    "rollup": "^4.13.2",
+    "rollup-plugin-dts": "^6.1.0"
   }
 }

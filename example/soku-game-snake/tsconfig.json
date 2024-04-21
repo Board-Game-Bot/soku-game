@@ -3,7 +3,7 @@
     "target": "es2018",
     "module": "NodeNext",
     "lib": ["esnext", "dom"],
-    "moduleResolution": "nodenext",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "strictNullChecks": true,

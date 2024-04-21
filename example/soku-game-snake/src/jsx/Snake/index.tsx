@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LifeCycle } from '@soku-games/core';
 import { P } from '../../core/types.js';
 import { useGameContext } from '../context.js';
@@ -15,14 +15,18 @@ const dir = [[-1, 0], [0, 1], [1, 0], [0, -1]];
 export const Snake = React.memo((props: Props) => {
   const { snake, couldControl, color, index } = props;
   const [allow, setAllow] = React.useState(true);
-  const couldDisplayController = couldControl && allow;
-
   const { game, emit, wid = 0 } = useGameContext();
+  const [isOver, setOver] = useState(false);
+  const couldDisplayController = couldControl && allow && !isOver;
+
   React.useEffect(
     () => {
       game?.subscribe(LifeCycle.AFTER_STEP, () => {
         if (game?.data.dirs.every(i => i === -1))
           setAllow(true);
+      });
+      game?.subscribe(LifeCycle.AFTER_END, () => {
+        setOver(true);
       });
     },
     [game],
