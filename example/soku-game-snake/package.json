@@ -1,6 +1,6 @@
 {
   "name": "soku-game-snake",
-  "version": "1.7.10",
+  "version": "1.7.11",
   "description": "The example: soku-game-snake.",
   "scripts": {
     "dev": "vite",
